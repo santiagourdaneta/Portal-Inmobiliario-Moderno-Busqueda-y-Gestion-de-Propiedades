@@ -1,0 +1,51 @@
+// Este es el diccionario para TypeScript (nuestro traductor).
+{
+  "compilerOptions": {
+    // La versión de JavaScript a la que queremos que se traduzca nuestro código.
+    // "es2020" es una versión moderna y compatible.
+    "target": "es2020",
+    // El sistema de módulos que usaremos. "CommonJS" es el que usa Node.js normalmente.
+    "module": "CommonJS",
+    // Directorio donde TypeScript guardará el código JavaScript ya traducido.
+    // Esto es útil si quisiéramos compilarlo antes de ejecutarlo.
+    "outDir": "./dist",
+    // Habilita la interoperabilidad de módulos ES. Esto ayuda a que los "imports"
+    // y "exports" de TypeScript funcionen bien con librerías de JavaScript.
+    "esModuleInterop": true,
+    // Permite la importación de módulos JSON.
+    "resolveJsonModule": true,
+    // Genera archivos de definición de tipo (para que TypeScript pueda entender el código).
+    "declaration": true,
+    // Para depurar el código más fácilmente.
+    "sourceMap": true,
+    // No emitir errores si algunas variables no se usan.
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    // Controla si se usan rutas absolutas para los módulos.
+    "baseUrl": "./",
+    // Permite tipos importados por defecto.
+    "allowSyntheticDefaultImports": true,
+    // Define el entorno de ejecución, en este caso, "node".
+    "lib": [
+      "es2020",
+      "dom" // Incluimos "dom" por si en el futuro usamos cosas del navegador en el server (aunque es raro)
+    ],
+    // Habilita todas las comprobaciones de TypeScript estrictas por defecto.
+    "strict": true,
+    // Especifica el tipo de resolución de módulos. "Node" es el método de resolución de Node.js.
+    "moduleResolution": "node",
+    // Fuerza a que las mayúsculas y minúsculas de los nombres de archivos coincidan en el disco.
+    "forceConsistentCasingInFileNames": true,
+  },
+  // Archivos que TypeScript debe incluir en la traducción.
+  // Aquí le decimos que incluya todos los archivos .ts en la carpeta actual y subcarpetas.
+  "include": [
+    "**/*.ts"
+  ],
+  // Archivos que TypeScript debe excluir de la traducción.
+  // Excluimos la carpeta donde se guarda el código ya traducido y los módulos de Node.
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
